@@ -144,7 +144,7 @@ $(window).load(function() {
 
   var wh = window.innerHeight;
   var ww = window.innerWidth;
-  var SCRL_DELAY = 3;
+  var SCRL_DELAY = (ww > 600) ? 2.7 : 2;
   var SCRL_SPEED = 2;
   var gnavLock = true;
   var gnavDuration = 300;
@@ -211,9 +211,11 @@ $(window).load(function() {
 
   function parallaxInit(wh,ww) {
     var gnavOffset = wh/5;
-    var titleOffset = (wh*0.7 > 480) ? (wh-gnavOffset-480)/2 : (wh*0.3-gnavOffset)/2;
+    var titleOffset = (ww < 600) ? 0 :
+                      (wh*0.7 > 480) ? (wh-gnavOffset-480)/2 : (wh*0.3-gnavOffset)/2;
     var goTopOffset = (ww >= 960) ? ww/2-323 : ww*0.2-35;
-    var sectionPadding = (wh > 800) ? 150 : 100*(wh/800)+50;
+    var sectionPadding = (ww < 600) ? 40 :
+                         (wh > 800) ? 150 : 100*(wh/800)+50;
 
     $("body").css("height", (sumScrlWait[sumScrlWait.length-1]-1)*wh*SCRL_DELAY);
     $('header#site-title').css('height', wh);
@@ -234,7 +236,7 @@ $(window).load(function() {
 
   //---[goInternalLink]
 
-  $('div#goTop a').click(function() {    return goInternalLink(0);                 });
+  $('div#goTop a, h1#title-floated a').click(function() {    return goInternalLink(0);                 });
   $('a.gnav-about').click(function() {   return goInternalLink(wh*SCRL_DELAY/2);   });
   $('a.gnav-member').click(function() {  return goInternalLink((2*sumScrlWait[1]-1)*wh*SCRL_DELAY/2); });
   $('a.gnav-concert').click(function() { return goInternalLink((2*sumScrlWait[2]-1)*wh*SCRL_DELAY/2); });

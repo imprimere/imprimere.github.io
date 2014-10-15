@@ -63,70 +63,77 @@ header#site-title {
   z-index: 1;
 
   h1#title {
-    width: 480px;
-    height: 70%;
-    max-height: 480px;
+    background: url("../images/title.png") center center no-repeat;
+    background-size: 100% auto;
     margin: 0 auto;
-    text-align: center;
-    img {
-      display: block;
-      margin: 0 auto;
+    @media screen and (min-width: 600px) {
+      width: 480px;
+      height: 70%;
+      max-height: 480px;
+    }
+    @media screen and (max-width: 600px) {
+      width: 80%;
       height: 100%;
-      width: auto;
+    }
+    span {
+      display: none;
     }
   }
 }
 
 
-
 header nav#global-nav {
-  height: 50px;
+  @media screen and (min-width: 600px) {
+    height: 50px;
+    ul {
+      position: fixed;
+      z-index: 30;
+      width: 100%;
+      text-align: center;
 
-  ul {
-    position: fixed;
-    z-index: 30;
-    width: 100%;
-    text-align: center;
+      li {
+        display: inline-block;
+        margin: 0 5px;
 
-    li {
-      display: inline-block;
-      margin: 0 5px;
+        a {
+          display: block;
+          height: 50px;
 
-      a {
-        display: block;
-        height: 50px;
+          &.gnav-about {
+            width: 128px;
+            background: transparent url('../images/gnav/about.png') center center no-repeat;
+          }
+          &.gnav-member {
+            width: 160px;
+            background: transparent url('../images/gnav/member.png') center center no-repeat;
+          }
+          &.gnav-concert {
+            width: 152px;
+            background: transparent url('../images/gnav/concert.png') center center no-repeat;
+          }
+          &.gnav-blog {
+            width: 104px;
+            background: transparent url('../images/gnav/blog.png') center center no-repeat;
+          }
+          &.gnav-contact {
+            width: 152px;
+            background: transparent url('../images/gnav/contact.png') center center no-repeat;
+          }
 
-        &.gnav-about {
-          width: 128px;
-          background: transparent url('../images/gnav/about.png') center center no-repeat;
-        }
-        &.gnav-member {
-          width: 160px;
-          background: transparent url('../images/gnav/member.png') center center no-repeat;
-        }
-        &.gnav-concert {
-          width: 152px;
-          background: transparent url('../images/gnav/concert.png') center center no-repeat;
-        }
-        &.gnav-blog {
-          width: 104px;
-          background: transparent url('../images/gnav/blog.png') center center no-repeat;
-        }
-        &.gnav-contact {
-          width: 152px;
-          background: transparent url('../images/gnav/contact.png') center center no-repeat;
+          span {
+            display: none;
+            visibility: hidden;
+          }
         }
 
-        span {
-          display: none;
-          visibility: hidden;
-        }
       }
 
     }
 
   }
-
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 
@@ -140,34 +147,49 @@ nav#global-nav-floated {
   top: -100px;
   background: white;
   width: 100%;
-
+  h1#title-floated {
+    float: left;
+    a img {
+      height: 50px;
+      width: 240px;
+      padding: 5px 10px;
+    }
+    @media screen and (max-width: 600px) {
+      float: none;
+      width: 164px;
+      margin: 0 auto;
+      a img {
+        height: 30px;
+        width: 144px;
+        padding: 5px 10px;
+      }
+    }
+  }
   ul {
-    height: 60px;
+    height: 70px;
     text-align: center;
-
+    float: left;
+    margin: 0 0 0 20px;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
     li {
       float: left;
-      height: 60px;
+      height: 100%;
       color: #00B3EF;
       a {
         display: block;
-        height: 60px;
+        height: 100%;
         padding: 0;
         margin: 0;
         img {
           height: 35px;
-          padding: 12px 3px;
+          padding: 17px 13px;
           margin: 0;
         }
       }
-      &:not(#title-floated) a:hover {
-        background: #f5faff;
-      }
-      &#title-floated a img {
-        height: 50px;
-        width: 240px;
-        padding: 5px 10px;
-        margin: 0 20px 0 0;
+      a:hover {
+        background: rgba(0, 179, 239, 0.15);
       }
     }
   }
@@ -176,6 +198,9 @@ nav#global-nav-floated {
 
 
 div#goTop {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
   position: fixed;
   z-index: 21;
   a {
@@ -226,21 +251,15 @@ section {
   }
 
   div.section-wrap {
-    max-width: 960px;
     margin: 0 auto;
-  }
-
-  header {
-    float: left;
-    width: 40%;
-    min-width: 300px;
-    min-height: 150px;
-    text-align: center;
-    * {
-      display: none;
-      visibility: hidden;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 600px) {
+      max-width: 960px;
     }
   }
+
 
   &#about header {
     background: url('../images/sub-title/about.png') center center no-repeat;
@@ -255,12 +274,53 @@ section {
     background: url('../images/sub-title/contact.png') center center no-repeat;
   }
 
+  @media screen and (max-width: 600px) {
+    &#about header, &#concert header {
+      background-position: center center;
+      background-size: auto 100%;
+      background-color: rgba(0, 179, 239, 0.8);
+    }
+    &#member header, &#contact header {
+      background-position: center center;
+      background-size: auto 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  header {
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      height: 75px;
+      position: absolute;
+      z-index: 100;
+    }
+    @media screen and (min-width: 600px) {
+      float: left;
+      width: 40%;
+      min-width: 300px;
+      min-height: 150px;
+      text-align: center;
+    }
+    * {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+
   div.content {
     position: relative;
-    width: 60%;
-    min-width: 450px;
-    margin: 0 0 0 40%;
-
+    z-index: 10;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      padding: 100px 0 0;
+      margin: 0 auto;
+    }
+    @media screen and (min-width: 600px) {
+      width: 60%;
+      min-width: 450px;
+      margin: 0 0 0 40%;
+    }
     div.content-wrap {
       position: relative;
       padding: 20px;
@@ -268,16 +328,24 @@ section {
 
     p {
       padding: 15px;
+      line-height: 24px;
     }
     p+p {
       padding: 0 15px 15px;
     }
     span {
       padding: 15px;
+      &.member-data {
+        display: inline-block;
+        padding: 5px 15px 15px;
+      }
     }
     h2 {
       font-weight: normal;
       padding: 20px 0 0 15px;
+    }
+    img {
+      max-width: 100%;
     }
     p img {
       display: block;
@@ -323,31 +391,44 @@ section {
 
     dl.contact-list {
       padding: 15px;
-      dt {
-        height: 30px;
-        width: 150px;
-        float: left;
+      @media screen and (max-width: 600px) {
+        dt {
+          padding: 0 0 5px;
+        }
+        dd {
+          padding: 0 0 15px;
+        }
       }
-      dd {
-        height: 30px;
-        span.domain {
-          padding: 0;
-          &:before {
-            content: "@";
-            padding: 0 3px;
-          }
+      @media screen and (min-width: 600px) {
+        dt {
+          height: 30px;
+          width: 150px;
+          float: left;
+        }
+        dd {
+          height: 30px;
+        }
+      }
+      address {
+        font-style: normal;
+      }
+      span.domain {
+        padding: 0;
+        &:before {
+          content: "@";
+          padding: 0 3px;
         }
       }
     }
 
     div.fb-like-box {
-      width: 100%;
+      width: 90%;
       height: 240px;
       overflow: hidden;
     }
 
     div.tw-tweet-box {
-      width: 100%;
+      width: 90%;
       height: 420px;
       padding: 20px;
       overflow: hidden;
@@ -380,21 +461,4 @@ footer {
       padding: 10px;
     }
   }
-}
-
-
-
-
-
-
-
-div#scrollVal {
-  opacity: 0.5;
-  position: fixed;
-  z-index: 100;
-  top: 200px;
-  left: 20px;
-  padding: 10px 15px;
-  background: #eee;
-  color: black;
 }

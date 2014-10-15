@@ -1,12 +1,5 @@
 'use strict';
 
-// livereload用の初期設定
-var path = require('path'),
-    lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
-    folderMount = function folderMount(connect, point) {
-        return connect.static(path.resolve(point));
-    };
-
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -18,13 +11,13 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      // Sassファイルが更新されたら、cmqとcsscombのタスクを実行します。
       sass: {
-        files: ['source_css/style.scss'],
+        files: [
+          'source_css/style.scss',
+          'source_css/style_sp.scss'
+        ],
         tasks: ['compass', 'cmq', 'csscomb', 'cssmin'],
         options: {
-          //変更されたらブラウザを更新
-          livereload: true,
           nospawn: true
         }
       },
@@ -32,7 +25,6 @@ module.exports = function(grunt) {
         files: ['source_js/scroll.js'],
         tasks: ['concat', 'uglify'],
         options: {
-          livereload: true,
           nospawn: true
         }
       }
@@ -40,10 +32,7 @@ module.exports = function(grunt) {
     connect: {
       livereload: {
         options: {
-          port: 9001,
-          middleware: function(connect, options) {
-              return [lrSnippet, folderMount(connect, '.')];
-          }
+          port: 9001
         }
       }
     },

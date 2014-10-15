@@ -73,91 +73,15 @@ header#site-title
 
 header#site-title h1#title
 {
-    width: 480px;
-    height: 70%;
-    max-height: 480px;
     margin: 0 auto;
 
-    text-align: center;
+    background: url('../images/title.png') center center no-repeat;
+    background-size: 100% auto;
 }
 
-header#site-title h1#title img
-{
-    display: block;
-
-    width: auto;
-    height: 100%;
-    margin: 0 auto;
-}
-
-header nav#global-nav
-{
-    height: 50px;
-}
-
-header nav#global-nav ul
-{
-    position: fixed;
-    z-index: 30;
-
-    width: 100%;
-
-    text-align: center;
-}
-
-header nav#global-nav ul li
-{
-    display: inline-block;
-
-    margin: 0 5px;
-}
-
-header nav#global-nav ul li a
-{
-    display: block;
-
-    height: 50px;
-}
-
-header nav#global-nav ul li a.gnav-about
-{
-    width: 128px;
-
-    background: transparent url('../images/gnav/about.png') center center no-repeat;
-}
-
-header nav#global-nav ul li a.gnav-member
-{
-    width: 160px;
-
-    background: transparent url('../images/gnav/member.png') center center no-repeat;
-}
-
-header nav#global-nav ul li a.gnav-concert
-{
-    width: 152px;
-
-    background: transparent url('../images/gnav/concert.png') center center no-repeat;
-}
-
-header nav#global-nav ul li a.gnav-blog
-{
-    width: 104px;
-
-    background: transparent url('../images/gnav/blog.png') center center no-repeat;
-}
-
-header nav#global-nav ul li a.gnav-contact
-{
-    width: 152px;
-
-    background: transparent url('../images/gnav/contact.png') center center no-repeat;
-}
-
-header nav#global-nav ul li a span
+header#site-title h1#title span
 {
     display: none;
-    visibility: hidden;
 }
 
 nav#global-nav-floated
@@ -171,9 +95,24 @@ nav#global-nav-floated
     background: white;
 }
 
+nav#global-nav-floated h1#title-floated
+{
+    float: left;
+}
+
+nav#global-nav-floated h1#title-floated a img
+{
+    width: 240px;
+    height: 50px;
+    padding: 5px 10px;
+}
+
 nav#global-nav-floated ul
 {
-    height: 60px;
+    float: left;
+
+    height: 70px;
+    margin: 0 0 0 20px;
 
     text-align: center;
 }
@@ -182,7 +121,7 @@ nav#global-nav-floated ul li
 {
     float: left;
 
-    height: 60px;
+    height: 100%;
 
     color: #00b3ef;
 }
@@ -191,7 +130,7 @@ nav#global-nav-floated ul li a
 {
     display: block;
 
-    height: 60px;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -200,20 +139,12 @@ nav#global-nav-floated ul li a img
 {
     height: 35px;
     margin: 0;
-    padding: 12px 3px;
+    padding: 17px 13px;
 }
 
-nav#global-nav-floated ul li:not(#title-floated) a:hover
+nav#global-nav-floated ul li a:hover
 {
-    background: #f5faff;
-}
-
-nav#global-nav-floated ul li#title-floated a img
-{
-    width: 240px;
-    height: 50px;
-    margin: 0 20px 0 0;
-    padding: 5px 10px;
+    background: rgba(0,179,239,.15);
 }
 
 div#goTop
@@ -281,25 +212,7 @@ section#contact
 
 section div.section-wrap
 {
-    max-width: 960px;
     margin: 0 auto;
-}
-
-section header
-{
-    float: left;
-
-    width: 40%;
-    min-width: 300px;
-    min-height: 150px;
-
-    text-align: center;
-}
-
-section header *
-{
-    display: none;
-    visibility: hidden;
 }
 
 section#about header
@@ -322,13 +235,16 @@ section#contact header
     background: url('../images/sub-title/contact.png') center center no-repeat;
 }
 
+section header *
+{
+    display: none;
+    visibility: hidden;
+}
+
 section div.content
 {
     position: relative;
-
-    width: 60%;
-    min-width: 450px;
-    margin: 0 0 0 40%;
+    z-index: 10;
 }
 
 section div.content div.content-wrap
@@ -340,6 +256,8 @@ section div.content div.content-wrap
 
 section div.content p
 {
+    line-height: 24px;
+
     padding: 15px;
 }
 
@@ -353,11 +271,23 @@ section div.content span
     padding: 15px;
 }
 
+section div.content span.member-data
+{
+    display: inline-block;
+
+    padding: 5px 15px 15px;
+}
+
 section div.content h2
 {
     font-weight: normal;
 
     padding: 20px 0 0 15px;
+}
+
+section div.content img
+{
+    max-width: 100%;
 }
 
 section div.content p img
@@ -427,25 +357,17 @@ section div.content dl.contact-list
     padding: 15px;
 }
 
-section div.content dl.contact-list dt
+section div.content dl.contact-list address
 {
-    float: left;
-
-    width: 150px;
-    height: 30px;
+    font-style: normal;
 }
 
-section div.content dl.contact-list dd
-{
-    height: 30px;
-}
-
-section div.content dl.contact-list dd span.domain
+section div.content dl.contact-list span.domain
 {
     padding: 0;
 }
 
-section div.content dl.contact-list dd span.domain:before
+section div.content dl.contact-list span.domain:before
 {
     padding: 0 3px;
 
@@ -456,7 +378,7 @@ section div.content div.fb-like-box
 {
     overflow: hidden;
 
-    width: 100%;
+    width: 90%;
     height: 240px;
 }
 
@@ -464,7 +386,7 @@ section div.content div.tw-tweet-box
 {
     overflow: hidden;
 
-    width: 100%;
+    width: 90%;
     height: 420px;
     padding: 20px;
 }
@@ -505,16 +427,206 @@ footer div#nav-wrap p small
     padding: 10px;
 }
 
-div#scrollVal
+@media screen and (min-width: 600px)
 {
-    position: fixed;
-    z-index: 100;
-    top: 200px;
-    left: 20px;
 
-    padding: 10px 15px;
+    header#site-title h1#title
+    {
+        width: 480px;
+        height: 70%;
+        max-height: 480px;
+    }
 
-    opacity: .5;
-    color: black;
-    background: #eee;
+    header nav#global-nav
+    {
+        height: 50px;
+    }
+
+    header nav#global-nav ul
+    {
+        position: fixed;
+        z-index: 30;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    header nav#global-nav ul li
+    {
+        display: inline-block;
+
+        margin: 0 5px;
+    }
+
+    header nav#global-nav ul li a
+    {
+        display: block;
+
+        height: 50px;
+    }
+
+    header nav#global-nav ul li a.gnav-about
+    {
+        width: 128px;
+
+        background: transparent url('../images/gnav/about.png') center center no-repeat;
+    }
+
+    header nav#global-nav ul li a.gnav-member
+    {
+        width: 160px;
+
+        background: transparent url('../images/gnav/member.png') center center no-repeat;
+    }
+
+    header nav#global-nav ul li a.gnav-concert
+    {
+        width: 152px;
+
+        background: transparent url('../images/gnav/concert.png') center center no-repeat;
+    }
+
+    header nav#global-nav ul li a.gnav-blog
+    {
+        width: 104px;
+
+        background: transparent url('../images/gnav/blog.png') center center no-repeat;
+    }
+
+    header nav#global-nav ul li a.gnav-contact
+    {
+        width: 152px;
+
+        background: transparent url('../images/gnav/contact.png') center center no-repeat;
+    }
+
+    header nav#global-nav ul li a span
+    {
+        display: none;
+        visibility: hidden;
+    }
+
+    section div.section-wrap
+    {
+        max-width: 960px;
+    }
+
+    section header
+    {
+        float: left;
+
+        width: 40%;
+        min-width: 300px;
+        min-height: 150px;
+
+        text-align: center;
+    }
+
+    section div.content
+    {
+        width: 60%;
+        min-width: 450px;
+        margin: 0 0 0 40%;
+    }
+
+    section div.content dl.contact-list dt
+    {
+        float: left;
+
+        width: 150px;
+        height: 30px;
+    }
+
+    section div.content dl.contact-list dd
+    {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+
+    header#site-title h1#title
+    {
+        width: 80%;
+        height: 100%;
+    }
+
+    header nav#global-nav
+    {
+        display: none;
+    }
+
+    nav#global-nav-floated h1#title-floated
+    {
+        float: none;
+
+        width: 164px;
+        margin: 0 auto;
+    }
+
+    nav#global-nav-floated h1#title-floated a img
+    {
+        width: 144px;
+        height: 30px;
+        padding: 5px 10px;
+    }
+
+    nav#global-nav-floated ul
+    {
+        display: none;
+    }
+
+    div#goTop
+    {
+        display: none;
+    }
+
+    section div.section-wrap
+    {
+        width: 100%;
+    }
+
+    section#about header,
+section#concert header
+    {
+        background-color: rgba(0,179,239,.8);
+        background-position: center center;
+        background-size: auto 100%;
+    }
+
+    section#member header,
+section#contact header
+    {
+        background-color: rgba(255,255,255,.8);
+        background-position: center center;
+        background-size: auto 100%;
+    }
+
+    section header
+    {
+        position: absolute;
+        z-index: 100;
+
+        width: 100%;
+        height: 75px;
+    }
+
+    section div.content
+    {
+        width: 100%;
+        margin: 0 auto;
+        padding: 100px 0 0;
+    }
+
+    section div.content dl.contact-list dt
+    {
+        padding: 0 0 5px;
+    }
+
+    section div.content dl.contact-list dd
+    {
+        padding: 0 0 15px;
+    }
 }
