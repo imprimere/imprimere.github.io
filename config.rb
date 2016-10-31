@@ -6,22 +6,22 @@ http_path = "/"
 # ************************************
 # CSS Directory
 # ************************************
-css_dir = "css/"
+css_dir = "res/css/"
  
 # ************************************
 # Sass Directory
 # ************************************
-sass_dir = "source_css/"
+sass_dir = "res/source_css/"
  
 # ************************************
 # Image Directory
 # ************************************
-images_dir = "images/"
+images_dir = "res/images/"
  
 # ************************************
 # JavaScript Directory
 # ************************************
-javascripts_dir = "js/"
+javascripts_dir = "res/js/"
  
 # ************************************
 # Other

@@ -13,8 +13,8 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'source_css/style.scss',
-          'source_css/style_sp.scss'
+          'res/source_css/style.scss',
+          'res/source_css/style_sp.scss'
         ],
         tasks: ['compass', 'cmq', 'csscomb', 'cssmin'],
         options: {
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: ['source_js/scroll.js'],
+        files: ['res/source_js/scroll.js'],
         tasks: ['concat', 'uglify'],
         options: {
           nospawn: true
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-            'css/': ['css/style.css']
+            'res/css/': ['res/css/style.css']
         }
       }
     },
@@ -51,16 +51,16 @@ module.exports = function(grunt) {
     csscomb:{
       dev:{
         expand: true,
-        cwd: 'css/',
+        cwd: 'res/css/',
         src: ['*.css'],
-        dest: 'css/'
+        dest: 'res/css/'
       }
     },
     // css minify
     cssmin: {
       build: {
         files: {
-          'css/style.min.css' : 'css/style.css'
+          'res/css/style.min.css' : 'res/css/style.css'
         }
       }
     },
@@ -68,9 +68,9 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'source_js/jquery.js',
-          'source_js/easing.js',
-          'source_js/scroll.js',
+          'res/source_js/jquery.js',
+          'res/source_js/easing.js',
+          'res/source_js/scroll.js',
         ],
         dest: 'js/<%= pkg.name %>.js'
       }
@@ -82,8 +82,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'js/<%= pkg.name %>.js',
-        dest: 'js/<%= pkg.name %>.min.js'
+        src: 'res/js/<%= pkg.name %>.js',
+        dest: 'res/js/<%= pkg.name %>.min.js'
       }
     }
   });
