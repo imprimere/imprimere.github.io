@@ -72,7 +72,7 @@ module.exports = function(grunt) {
           'res/source_js/easing.js',
           'res/source_js/scroll.js',
         ],
-        dest: 'js/<%= pkg.name %>.js'
+        dest: 'res/js/<%= pkg.name %>.js'
       }
     },
 

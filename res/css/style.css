@@ -298,18 +298,16 @@ section div.content p img
     margin: 0 auto;
 }
 
+section div.content ul.member-photo
+{
+    padding: 100px 0 0;
+}
+
 section div.content ul.member-photo li
 {
     float: left;
 
-    width: 100px;
-    height: 100px;
-    margin: 20px 10px 10px;
-
     opacity: .7;
-    border-radius: 50px;
-    background-position: center center;
-    background-size: auto 100%;
 }
 
 section div.content ul.member-photo li:hover
@@ -507,13 +505,21 @@ footer div#nav-wrap p small
         visibility: hidden;
     }
 
+    nav#global-nav-floated
+    {
+        min-width: 900px;
+    }
+
     section div.section-wrap
     {
+        min-width: 800px;
         max-width: 960px;
     }
 
     section header
     {
+        top: 50px;
+
         float: left;
 
         width: 40%;
@@ -528,6 +534,20 @@ footer div#nav-wrap p small
         width: 60%;
         min-width: 450px;
         margin: 0 0 0 40%;
+    }
+
+    section div.content ul.member-photo
+    {
+        width: 167%;
+        min-width: 450px;
+        margin: 0 0 0 -67%;
+    }
+
+    section div.content ul.member-photo li
+    {
+        width: 30%;
+        height: auto;
+        margin: 5px 1%;
     }
 
     section div.content dl.contact-list dt
@@ -606,11 +626,13 @@ section#contact header
 
     section header
     {
-        position: absolute;
+        position: relative;
         z-index: 100;
+        top: 9px;
 
         width: 100%;
-        height: 75px;
+        height: 65px;
+        padding: 5px 0;
     }
 
     section div.content
@@ -618,6 +640,19 @@ section#contact header
         width: 100%;
         margin: 0 auto;
         padding: 100px 0 0;
+    }
+
+    section div.content ul.member-photo
+    {
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    section div.content ul.member-photo li
+    {
+        width: 46%;
+        height: auto;
+        margin: 5px 2%;
     }
 
     section div.content dl.contact-list dt

@@ -171,6 +171,7 @@ $(window).load(function() {
 
   $(window).scroll(function() {
     scrl = $(this).scrollTop()/SCRL_DELAY;
+
     if(scrl > wh*0.45 && gnavLock) {
       gnavLock = false;
       $('nav#global-nav-floated').animate({'top': 0}, {duration: gnavDuration, easing: gnavEasing});
