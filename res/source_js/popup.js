@@ -57,9 +57,19 @@ function showPopup(src, id) {
 }
 
 function initPopup() {
-  var popupWidth = window.innerWidth * 0.7;
+  var popupWidth = window.innerWidth * 0.8;
+  var popupHeight = window.innerHeight * 0.8;
+
+  if(popupWidth * 0.75 > popupHeight) {
+    popupWidth = popupHeight * 4 / 3;
+  } else {
+    popupHeight = popupWidth * 0.75;
+  }
+
   $("#popup-content").css({
     "width": popupWidth + 20,
-    "height": popupWidth*0.75 + 20
+    "height": popupHeight + 20,
+    "marginLeft": -(popupWidth + 20)/2,
+    "marginTop": -(popupHeight + 20)/2
   });
 }
