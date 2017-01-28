@@ -28,6 +28,10 @@ $(window).load(function() {
 
   parallaxInit(wh,ww);
 
+  $(window).resize(function() {
+    parallaxInit(wh,ww);
+  });
+
   $(window).scroll(function() {
     scrl = $(this).scrollTop()/SCRL_DELAY;
 

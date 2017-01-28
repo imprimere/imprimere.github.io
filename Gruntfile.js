@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: ['res/source_js/scroll.js'],
+        files: ['res/source_js/scroll.js', 'res/source_js/popup.js'],
         tasks: ['concat', 'uglify'],
         options: {
           nospawn: true
@@ -71,6 +71,7 @@ module.exports = function(grunt) {
           'res/source_js/jquery.js',
           'res/source_js/easing.js',
           'res/source_js/scroll.js',
+          'res/source_js/popup.js',
         ],
         dest: 'res/js/<%= pkg.name %>.js'
       }

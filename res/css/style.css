@@ -169,6 +169,164 @@ div#goTop span
     visibility: hidden;
 }
 
+div.popup
+{
+    position: fixed;
+    z-index: 100;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+}
+
+div.popup div.popup-content
+{
+    position: fixed;
+    z-index: 101;
+    top: 50%;
+    left: 50%;
+
+    width: 70vw;
+    height: 60vh;
+    margin: -30vh -35vw;
+
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.5);
+}
+
+div.popup div.popup-content div.popup-wrap
+{
+    padding: 10px;
+}
+
+div.popup div.popup-content div.popup-wrap img.popup-photo
+{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5px;
+}
+
+div.popup div.popup-content div.popup-next,
+div.popup div.popup-content div.popup-prev
+{
+    position: absolute;
+    top: 50%;
+
+    width: 60px;
+    height: 60px;
+    margin: -10px 0 0;
+
+    opacity: .7;
+    border-radius: 33px;
+    background: black;
+}
+
+div.popup div.popup-content div.popup-next:hover,
+div.popup div.popup-content div.popup-prev:hover
+{
+    cursor: pointer;
+
+    opacity: .9;
+}
+
+div.popup div.popup-content div.popup-next:after,
+div.popup div.popup-content div.popup-prev:after
+{
+    font-size: 1em;
+    line-height: 60px;
+
+    position: absolute;
+
+    display: block;
+
+    width: 60px;
+    height: 60px;
+
+    text-align: center;
+
+    color: white;
+}
+
+div.popup div.popup-content div.popup-next
+{
+    right: 30px;
+}
+
+div.popup div.popup-content div.popup-next:after
+{
+    padding: 0 0 0 1px;
+
+    content: '▶';
+}
+
+div.popup div.popup-content div.popup-prev
+{
+    left: 30px;
+}
+
+div.popup div.popup-content div.popup-prev:after
+{
+    padding: 0 1px 0 0;
+
+    content: '◀';
+}
+
+div.popup div.popup-content div.popup-close
+{
+    position: absolute;
+    top: -33px;
+    right: -33px;
+
+    width: 60px;
+    height: 60px;
+
+    border: 3px solid white;
+    border-radius: 33px;
+    background: #f33;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.5);
+}
+
+div.popup div.popup-content div.popup-close:hover
+{
+    cursor: pointer;
+
+    background: #f00;
+}
+
+div.popup div.popup-content div.popup-close:after
+{
+    font-size: 2em;
+    line-height: 60px;
+
+    position: absolute;
+
+    display: block;
+
+    width: 60px;
+    height: 60px;
+
+    content: '×';
+    text-align: center;
+
+    color: white;
+}
+
+div.popup div.popup-shadow
+{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.5);
+}
+
 section
 {
     position: fixed;

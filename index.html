@@ -40,6 +40,16 @@
   <div id="goTop">
     <a href="./"><span>Top</span></a>
   </div>
+
+  <div id="popup" class="popup">
+    <div class="popup-shadow" id="popup-shadow"></div>
+    <div class="popup-content" id="popup-content">
+      <div class="popup-wrap"><img class="popup-photo" id="popup-photo"></div>
+      <div class="popup-prev" id="popup-prev"></div>
+      <div class="popup-next" id="popup-next"></div>
+      <div class="popup-close" id="popup-close"></div>
+    </div>
+  </div>
     
   <article id="main">
     <section id="about">
@@ -121,14 +131,14 @@
         <h2>人事 ： 川端 温子</h2>
         <span class="member-data">和歌山工業高等専門学校 平成23年卒業</span>
 
-        <ul class="member-photo clearfix">
-          <li><img src="res/images/photo/thumb/member_1st.jpg"><span>Winter Concert「刻」</span></li>
-          <li><img src="res/images/photo/thumb/member_2nd.jpg"><span>Winter Concert「灯」</span></li>
-          <li><img src="res/images/photo/thumb/member_3rd.jpg"><span>Winter Concert「進」</span></li>
-          <li><img src="res/images/photo/thumb/member_4th.jpg"><span>Winter Concert「演」</span></li>
-          <li><img src="res/images/photo/thumb/member_5th.jpg"><span>秋季演奏会「郷」</span></li>
-          <li><img src="res/images/photo/thumb/member_6th.jpg"><span>第６回定期演奏会「道」</span></li>
-          <li><img src="res/images/photo/thumb/member_7th.jpg"><span>第７回定期演奏会「星」</span></li>
+        <ul class="member-photo clearfix" id="member-photo">
+          <li id="popup-0"><img src="res/images/photo/thumb/member_1st.jpg"><span>Winter Concert「刻」</span></li>
+          <li id="popup-1"><img src="res/images/photo/thumb/member_2nd.jpg"><span>Winter Concert「灯」</span></li>
+          <li id="popup-2"><img src="res/images/photo/thumb/member_3rd.jpg"><span>Winter Concert「進」</span></li>
+          <li id="popup-3"><img src="res/images/photo/thumb/member_4th.jpg"><span>Winter Concert「演」</span></li>
+          <li id="popup-4"><img src="res/images/photo/thumb/member_5th.jpg"><span>秋季演奏会「郷」</span></li>
+          <li id="popup-5"><img src="res/images/photo/thumb/member_6th.jpg"><span>第６回定期演奏会「道」</span></li>
+          <li id="popup-6"><img src="res/images/photo/thumb/member_7th.jpg"><span>第７回定期演奏会「星」</span></li>
         </ul>
       </div>
       </div>
@@ -190,7 +200,7 @@
     </div>
     </section>
   </article>
-  
+
 </body>
 
 <script>
