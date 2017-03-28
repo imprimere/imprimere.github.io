@@ -144,7 +144,7 @@ $(window).load(function() {
 
   var wh = window.innerHeight;
   var ww = window.innerWidth;
-  var SCRL_DELAY = (ww > 600) ? 2.7 : 2;
+  var SCRL_DELAY = (ww > 600) ? 2.7 : 1.5;
   var SCRL_SPEED = 2;
   var gnavLock = true;
   var gnavDuration = 300;

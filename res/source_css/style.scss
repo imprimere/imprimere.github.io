@@ -236,6 +236,9 @@ div.popup {
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
     div.popup-wrap {
       padding: 10px;
+      @media screen and (max-width: 600px) {
+        padding: 5px;
+      }
       img.popup-photo {
         border-radius: 5px;
         width: 100%;
@@ -245,11 +248,11 @@ div.popup {
     div.popup-next, div.popup-prev {
       height: 60px;
       width: 60px;
-      border-radius: 33px;
+      border-radius: 30px;
       background: black;
       position: absolute;
       top: 50%;
-      margin: -10px 0 0;
+      margin: -30px 0 0;
       opacity: 0.7;
       &:hover {
         opacity: 0.9;
@@ -280,6 +283,26 @@ div.popup {
         padding: 0 1px 0 0;
       }
     }
+    @media screen and (max-width: 600px) {
+      div.popup-next, div.popup-prev {
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        margin: -15px 0 0;
+        &:after {
+          font-size: 0.8em;
+          line-height: 30px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+      div.popup-next {
+        right: 10px;
+      }
+      div.popup-prev {
+        left: 10px;
+      }
+    }
     div.popup-close {
       height: 60px;
       width: 60px;
@@ -304,6 +327,22 @@ div.popup {
         text-align: center;
         width: 60px;
         height: 60px;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      div.popup-close {
+        height: 30px;
+        width: 30px;
+        border-radius: 16px;
+        border: 1px solid white;
+        right: -16px;
+        top: -16px;
+        &:after {
+          font-size: 1.5em;
+          line-height: 30px;
+          width: 30px;
+          height: 30px;
+        }
       }
     }
   }

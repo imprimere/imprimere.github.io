@@ -217,10 +217,10 @@ div.popup div.popup-content div.popup-prev
 
     width: 60px;
     height: 60px;
-    margin: -10px 0 0;
+    margin: -30px 0 0;
 
     opacity: .7;
-    border-radius: 33px;
+    border-radius: 30px;
     background: black;
 }
 
@@ -759,6 +759,62 @@ footer div#nav-wrap p small
     div#goTop
     {
         display: none;
+    }
+
+    div.popup div.popup-content div.popup-wrap
+    {
+        padding: 5px;
+    }
+
+    div.popup div.popup-content div.popup-next,
+div.popup div.popup-content div.popup-prev
+    {
+        width: 30px;
+        height: 30px;
+        margin: -15px 0 0;
+
+        border-radius: 15px;
+    }
+
+    div.popup div.popup-content div.popup-next:after,
+div.popup div.popup-content div.popup-prev:after
+    {
+        font-size: .8em;
+        line-height: 30px;
+
+        width: 30px;
+        height: 30px;
+    }
+
+    div.popup div.popup-content div.popup-next
+    {
+        right: 10px;
+    }
+
+    div.popup div.popup-content div.popup-prev
+    {
+        left: 10px;
+    }
+
+    div.popup div.popup-content div.popup-close
+    {
+        top: -16px;
+        right: -16px;
+
+        width: 30px;
+        height: 30px;
+
+        border: 1px solid white;
+        border-radius: 16px;
+    }
+
+    div.popup div.popup-content div.popup-close:after
+    {
+        font-size: 1.5em;
+        line-height: 30px;
+
+        width: 30px;
+        height: 30px;
     }
 
     section div.section-wrap
