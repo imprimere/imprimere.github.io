@@ -14,9 +14,9 @@ $(window).load(function() {
   var headerH = $('header#site-title').height();
   var aboutH  = $('section#about').height();
   var memberH = $('section#member').height();
-  var concertH = $('section#concert').height();
+  var liveH = $('section#live').height();
   var contactH = $('section#contact').height();
-  var rawScrlWait = [aboutH/wh, memberH/wh, concertH/wh, contactH/wh];
+  var rawScrlWait = [aboutH/wh, memberH/wh, liveH/wh, contactH/wh];
   for(var i=0; i<4; i++) { rawScrlWait[i] = (rawScrlWait[i] < 1)? 1 : rawScrlWait[i]; }
   var sumScrlWait = [
         1,
@@ -48,7 +48,7 @@ $(window).load(function() {
     //---[Section]
     parallaxMove($('section#about'),   0);
     parallaxMove($('section#member'),  1);
-    parallaxMove($('section#concert'), 2);
+    parallaxMove($('section#live'), 2);
     parallaxMove($('section#contact'), 3);
   });
 
@@ -87,7 +87,7 @@ $(window).load(function() {
     $('section').css({'padding-top': sectionPadding, 'padding-bottom': sectionPadding});
     $('section#about').css('top', wh);
     $('section#member').css('top', wh);
-    $('section#concert').css('top', wh);
+    $('section#live').css('top', wh);
     $('section#contact').css('top', wh);
 
     $(window).scrollTop(0);
@@ -99,7 +99,7 @@ $(window).load(function() {
   $('div#goTop a, h1#title-floated a').click(function() {    return goInternalLink(0);                 });
   $('a.gnav-about').click(function() {   return goInternalLink(wh*SCRL_DELAY/2);   });
   $('a.gnav-member').click(function() {  return goInternalLink((2*sumScrlWait[1]-1)*wh*SCRL_DELAY/2); });
-  $('a.gnav-concert').click(function() { return goInternalLink((2*sumScrlWait[2]-1)*wh*SCRL_DELAY/2); });
+  $('a.gnav-live').click(function() { return goInternalLink((2*sumScrlWait[2]-1)*wh*SCRL_DELAY/2); });
   $('a.gnav-contact').click(function() { return goInternalLink((2*sumScrlWait[3]-1)*wh*SCRL_DELAY/2); });
 
   function goInternalLink(scrlTop) {

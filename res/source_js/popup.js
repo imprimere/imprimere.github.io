@@ -1,5 +1,5 @@
 var MIN_ID = 0;
-var MAX_ID = 6;
+var MAX_ID = 8;
 
 $(function() {
   initPopup();

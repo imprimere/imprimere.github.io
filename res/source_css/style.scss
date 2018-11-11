@@ -98,26 +98,30 @@ header nav#global-nav {
         a {
           display: block;
           height: 50px;
+          background-color: transparent;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
 
           &.gnav-about {
             width: 128px;
-            background: transparent url('../images/gnav/about.png') center center no-repeat;
+            background-image: url('../images/gnav/gnav_about.png');
           }
           &.gnav-member {
             width: 160px;
-            background: transparent url('../images/gnav/member.png') center center no-repeat;
+            background-image: url('../images/gnav/gnav_member.png');
           }
-          &.gnav-concert {
-            width: 152px;
-            background: transparent url('../images/gnav/concert.png') center center no-repeat;
+          &.gnav-live {
+            width: 110px;
+            background-image: url('../images/gnav/gnav_live.png');
           }
           &.gnav-blog {
             width: 104px;
-            background: transparent url('../images/gnav/blog.png') center center no-repeat;
+            background-image: url('../images/gnav/gnav_blog.png');
           }
           &.gnav-contact {
             width: 152px;
-            background: transparent url('../images/gnav/contact.png') center center no-repeat;
+            background-image: url('../images/gnav/gnav_contact.png');
           }
 
           span {
@@ -380,7 +384,7 @@ section {
     background: white;
     z-index: 3;
   }
-  &#concert {
+  &#live {
     color: white;
     background: #00B3EF;
     z-index: 4;
@@ -402,22 +406,31 @@ section {
     }
   }
 
+  &#about header,
+  &#member header,
+  &#live header,
+  &#contact header {
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 300px 150px;
+  }
 
   &#about header {
-    background: url('../images/sub-title/about.png') center center no-repeat;
+    background-image: url('../images/title/title_about.png');
   }
   &#member header {
-    background: url('../images/sub-title/member.png') center center no-repeat;
+    background-image: url('../images/title/title_member.png');
   }
-  &#concert header {
-    background: url('../images/sub-title/concert.png') center center no-repeat;
+  &#live header {
+    background-image: url('../images/title/title_live.png');
   }
   &#contact header {
-    background: url('../images/sub-title/contact.png') center center no-repeat;
+    background-image: url('../images/title/title_contact.png');
   }
 
   @media screen and (max-width: 600px) {
-    &#about header, &#concert header {
+    &#about header, &#live header {
       background-position: center center;
       background-size: auto 100%;
       background-color: rgba(0, 179, 239, 0.8);
@@ -485,6 +498,28 @@ section {
         padding: 5px 15px 15px;
       }
     }
+    a.twitter-link {
+      color: #00b3ef;
+      line-height: 18px;
+      padding: 3px 0 0 24px;
+      margin: 0 0 1px 16px;
+      position: relative;
+      &:hover {
+        color: #008dbc;
+        top: 1px;
+        left: 1px;
+      }
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background: url("../images/ic-twitter.png") center center no-repeat;
+        background-size: 100% 100%;
+      }
+    }
     h2 {
       font-weight: normal;
       padding: 20px 0 0 15px;
@@ -502,10 +537,13 @@ section {
       padding: 100px 0 0;
       li {
         float: left;
-        opacity: 0.7;
-        &:hover {
-          opacity: 1;
-          cursor: pointer;
+        background: white;
+        img {
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }          
         }
         span {
           display: none;

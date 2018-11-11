@@ -352,7 +352,7 @@ section#member
     background: white;
 }
 
-section#concert
+section#live
 {
     z-index: 4;
 
@@ -373,24 +373,35 @@ section div.section-wrap
     margin: 0 auto;
 }
 
+section#about header,
+section#member header,
+section#live header,
+section#contact header
+{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 300px 150px;
+}
+
 section#about header
 {
-    background: url('../images/sub-title/about.png') center center no-repeat;
+    background-image: url('../images/title/title_about.png');
 }
 
 section#member header
 {
-    background: url('../images/sub-title/member.png') center center no-repeat;
+    background-image: url('../images/title/title_member.png');
 }
 
-section#concert header
+section#live header
 {
-    background: url('../images/sub-title/concert.png') center center no-repeat;
+    background-image: url('../images/title/title_live.png');
 }
 
 section#contact header
 {
-    background: url('../images/sub-title/contact.png') center center no-repeat;
+    background-image: url('../images/title/title_contact.png');
 }
 
 section header *
@@ -436,6 +447,41 @@ section div.content span.member-data
     padding: 5px 15px 15px;
 }
 
+section div.content a.twitter-link
+{
+    line-height: 18px;
+
+    position: relative;
+
+    margin: 0 0 1px 16px;
+    padding: 3px 0 0 24px;
+
+    color: #00b3ef;
+}
+
+section div.content a.twitter-link:hover
+{
+    top: 1px;
+    left: 1px;
+
+    color: #008dbc;
+}
+
+section div.content a.twitter-link:before
+{
+    position: absolute;
+    top: 1px;
+    left: 0;
+
+    width: 18px;
+    height: 18px;
+
+    content: ' ';
+
+    background: url('../images/ic-twitter.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
 section div.content h2
 {
     font-weight: normal;
@@ -465,10 +511,15 @@ section div.content ul.member-photo li
 {
     float: left;
 
-    opacity: .7;
+    background: white;
 }
 
-section div.content ul.member-photo li:hover
+section div.content ul.member-photo li img
+{
+    opacity: .5;
+}
+
+section div.content ul.member-photo li img:hover
 {
     cursor: pointer;
 
@@ -620,41 +671,46 @@ footer div#nav-wrap p small
         display: block;
 
         height: 50px;
+
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% 100%;
     }
 
     header nav#global-nav ul li a.gnav-about
     {
         width: 128px;
 
-        background: transparent url('../images/gnav/about.png') center center no-repeat;
+        background-image: url('../images/gnav/gnav_about.png');
     }
 
     header nav#global-nav ul li a.gnav-member
     {
         width: 160px;
 
-        background: transparent url('../images/gnav/member.png') center center no-repeat;
+        background-image: url('../images/gnav/gnav_member.png');
     }
 
-    header nav#global-nav ul li a.gnav-concert
+    header nav#global-nav ul li a.gnav-live
     {
-        width: 152px;
+        width: 110px;
 
-        background: transparent url('../images/gnav/concert.png') center center no-repeat;
+        background-image: url('../images/gnav/gnav_live.png');
     }
 
     header nav#global-nav ul li a.gnav-blog
     {
         width: 104px;
 
-        background: transparent url('../images/gnav/blog.png') center center no-repeat;
+        background-image: url('../images/gnav/gnav_blog.png');
     }
 
     header nav#global-nav ul li a.gnav-contact
     {
         width: 152px;
 
-        background: transparent url('../images/gnav/contact.png') center center no-repeat;
+        background-image: url('../images/gnav/gnav_contact.png');
     }
 
     header nav#global-nav ul li a span
@@ -823,7 +879,7 @@ div.popup div.popup-content div.popup-prev:after
     }
 
     section#about header,
-section#concert header
+section#live header
     {
         background-color: rgba(0,179,239,.8);
         background-position: center center;
